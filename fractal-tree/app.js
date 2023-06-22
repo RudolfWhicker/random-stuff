@@ -10,24 +10,24 @@ function draw(startX, startY, len, angle, branchWidth) {
 
   ctx.strokeStyle = "#8e6a55"
   
-  ctx.translate(startX, startY);
-  ctx.rotate(angle * Math.PI/180);
-  ctx.moveTo(0, 0);
-  ctx.lineTo(0, -len);
-  ctx.stroke();
+  ctx.translate(startX, startY)
+  ctx.rotate(angle * Math.PI/180)
+  ctx.moveTo(0, 0)
+  ctx.lineTo(0, -len)
+  ctx.stroke()
 
   ctx.shadowBlur  = 50
-  ctx.shadowColor = "rgba(0,0,0,0.8)";
+  ctx.shadowColor = "rgba(0,0,0,0.8)"
   
   if(len < 20) {
-    ctx.restore();
-    return;
+    ctx.restore()
+    return
   }
 
-  draw(0, -len, len*0.8,  angleChange, branchWidth*0.8);
-  draw(0, -len, len*0.8, -angleChange, branchWidth*0.8);
+  draw(0, -len, len*0.8,  angleChange, branchWidth*0.8)
+  draw(0, -len, len*0.8, -angleChange, branchWidth*0.8)
 
-  ctx.restore();
+  ctx.restore()
 }
 
 draw(450, 550, 120, 0, 8)
